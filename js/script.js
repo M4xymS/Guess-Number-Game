@@ -21,11 +21,17 @@ const Game = () => {
     resultField.classList.add("winner");
     resultField.innerHTML = `Wow! u got that! the number is: ${randomNumber}`;
 
-    const restartGame = () => {
+    Swal.fire({
+      icon: "success",
+      title: "Nice!",
+      text: `You got that! the number is: ${input}`,
+      confirmButtonText: `Restart Game`,
+      confirmButtonColor: `#d33`,
+    }).then(function () {
       location.reload();
-    };
-    setTimeout(restartGame, 5000);
+    });
   }
+
   //Adding every number that someone guess
   if (input > 0 && input < 15) {
     numbersField.innerHTML += `${input} `;
