@@ -8,7 +8,7 @@ let count = 0;
 
 const Game = () => {
   const input = document.querySelector("#number").value;
-
+  // Logical statement, if someone need to guess higher or lower.
   if (input > 15) {
     resultField.innerHTML = `Guess number from 1 to 15!`;
   } else if (input < randomNumber) {
@@ -16,7 +16,7 @@ const Game = () => {
   } else {
     resultField.innerHTML = `Your Number is Lower than ${input}!`;
   }
-
+  // Win game statement
   if (input == randomNumber) {
     resultField.classList.add("winner");
     resultField.innerHTML = `Wow! u got that! the number is: ${randomNumber}`;
@@ -26,18 +26,17 @@ const Game = () => {
     };
     setTimeout(restartGame, 5000);
   }
-
-  numbersField.innerHTML += `${input} `;
+  //Adding every number that someone guess
+  if (input > 0 && input < 15) {
+    numbersField.innerHTML += `${input} `;
+  }
 };
 const countTries = () => {
   const input = document.querySelector("#number").value;
-  if (input > 15 && count == 0) {
-    countField.innerHTML = `Liczba Prób: ${count}`;
-  } else if (input > 15 && count > 0) {
-    count--;
+  if (input > 0 && input < 15) {
+    count++;
     countField.innerHTML = `Liczba Prób: ${count}`;
   } else {
-    count++;
     countField.innerHTML = `Liczba Prób: ${count}`;
   }
 };
