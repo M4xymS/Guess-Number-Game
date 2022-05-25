@@ -16,6 +16,7 @@ const Game = () => {
   } else {
     resultField.innerHTML = `Your Number is Lower than ${input}!`;
   }
+
   if (input == randomNumber) {
     resultField.classList.add("winner");
     resultField.innerHTML = `Wow! u got that! the number is: ${randomNumber}`;
@@ -25,6 +26,8 @@ const Game = () => {
     };
     setTimeout(restartGame, 5000);
   }
+
+  numbersField.innerHTML += `${input} `;
 };
 const countTries = () => {
   const input = document.querySelector("#number").value;
