@@ -24,9 +24,9 @@
     <div class='menu-button'></div>
   </label>
     <ul class="menu">
-        <li id="1">Easy</li>
-        <li id="2">Medium</li>
-        <li id="3">Hard</li>
+        <li>Easy</li>
+        <li>Medium</li>
+        <li>Hard</li>
 
     </ul>
   </nav>
@@ -36,10 +36,10 @@
 <div class="container__box">
     <div class="container__title">Guess The Number!</div>
     <div class="container__instruction">
-        Simple Game With Guessing number from 1-15, Have Fun!
+        Simple Game With Guessing number from 1-<span id="diff">15</span>, Have Fun!
     </div>
     <div class="container__form">
-        <input type="number" id="number" placeholder="Guess Number from 1 to 15.">
+        <input type="number" id="number" placeholder="Guess number from 1 to 15.">
         <button>Guess!</button>
         <div class="countTries">Number of tries: </div>
         <div class="myNumbers">Your numbers: </div>

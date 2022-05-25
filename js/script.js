@@ -1,9 +1,34 @@
+//difficulty of game
+let level = 15;
+// Buttons
 const btn = document.querySelector("button");
+let difficulty = document.querySelectorAll("ul.menu > li");
+const valuesDifficulty = document.querySelectorAll("#diff");
+// Check what difficulty is selected
+
+for (i of difficulty) {
+  const input = document.querySelector("#number");
+  i.addEventListener("click", function () {
+    if (this.innerHTML == "Easy") {
+      level = 15;
+    } else if (this.innerHTML == "Medium") {
+      level = 50;
+    } else if (this.innerHTML == "Hard") {
+      level = 100;
+    }
+
+    //Change values in HTML
+    valuesDifficulty[0].innerHTML = level;
+    input.placeholder = `Guess number from 1 to ${level}`;
+  });
+}
+
+// Fields
 const resultField = document.querySelector(".result");
 const countField = document.querySelector(".countTries");
 const numbersField = document.querySelector(".myNumbers");
 
-let randomNumber = Math.floor(Math.random() * 15 + 1);
+let randomNumber = Math.floor(Math.random() * level + 1);
 let count = 0;
 
 const Game = () => {

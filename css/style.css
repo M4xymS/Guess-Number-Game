@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@1,700&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+* {
+  font-family: "Raleway";
+  box-sizing: border-box;
+}
 
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
 body {
   background-color: #4158d0;
   background-image: linear-gradient(
@@ -12,21 +22,10 @@ body {
 }
 
 /* Menu */
-@import url(https://fonts.googleapis.com/css?family=Raleway);
+
 h2 {
   vertical-align: center;
   text-align: center;
-}
-
-html,
-body {
-  margin: 0;
-  height: 100%;
-}
-
-* {
-  font-family: "Raleway";
-  box-sizing: border-box;
 }
 
 .top-nav {
@@ -57,6 +56,7 @@ body {
 .menu > li {
   margin: 0 1rem;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .menu-button-container {
@@ -182,7 +182,9 @@ body {
 }
 
 /* form  */
-
+span {
+  font-family: "Lucida Sans", sans-serif;
+}
 .container__form {
   display: flex;
   justify-content: center;
