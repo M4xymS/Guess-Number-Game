@@ -18,9 +18,6 @@ const Game = () => {
   }
   // Win game statement
   if (input == randomNumber) {
-    resultField.classList.add("winner");
-    resultField.innerHTML = `Wow! u got that! the number is: ${randomNumber}`;
-
     Swal.fire({
       icon: "success",
       title: "Nice!",
