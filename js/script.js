@@ -1,6 +1,7 @@
 const btn = document.querySelector("button");
 const resultField = document.querySelector(".result");
 const countField = document.querySelector(".countTries");
+const numbersField = document.querySelector(".myNumbers");
 
 let randomNumber = Math.floor(Math.random() * 15 + 1);
 let count = 0;
@@ -16,11 +17,13 @@ const Game = () => {
     resultField.innerHTML = `Your Number is Lower than ${input}!`;
   }
   if (input == randomNumber) {
+    resultField.classList.add("winner");
     resultField.innerHTML = `Wow! u got that! the number is: ${randomNumber}`;
-    setTimeout(restartGame, 5000);
+
     const restartGame = () => {
       location.reload();
     };
+    setTimeout(restartGame, 5000);
   }
 };
 const countTries = () => {

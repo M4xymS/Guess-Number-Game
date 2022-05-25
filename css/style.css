@@ -83,14 +83,16 @@ body {
 }
 
 /* result  */
-.countTries {
+.countTries,
+.myNumbers {
   display: flex;
   justify-content: center;
-  margin: 2em;
+  margin: 2em 0 1em 0;
   flex-direction: row;
   font-family: "Lucila Sans", sans-serif;
   font-size: 1em;
 }
+
 .result {
   display: flex;
   justify-content: center;
@@ -111,4 +113,8 @@ body {
   margin: 3em;
   color: #888c9e;
   font-weight: bold;
+}
+.winner {
+  font-weight: bolder;
+  color: rgb(28, 235, 28);
 }
