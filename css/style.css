@@ -11,14 +11,22 @@ body {
   height: 100%;
 }
 body {
-  background-color: #4158d0;
-  background-image: linear-gradient(
-    45deg,
-    #4158d0 0%,
-    #c850c0 46%,
-    #ffcc70 100%
-  );
-  overflow: hidden;
+  background: linear-gradient(45deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
+  animation: gradient 1s ease infinite;
+  height: 100vh;
+}
+
+/* Gradient animation  */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Menu */
@@ -110,6 +118,10 @@ h2 {
 }
 
 @media (max-width: 700px) {
+  .container__box {
+    margin: 15px;
+  }
+
   .menu-button-container {
     display: flex;
   }
@@ -160,7 +172,6 @@ h2 {
 }
 .container__box {
   min-width: 35vw;
-  min-height: 45vh;
   background: #ffd;
   border: 2px solid #ddd;
   box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
@@ -209,8 +220,8 @@ span {
 
 .container__form button {
   background: #f14e4e;
-  display: inline-block;
   padding: 0.5em 1.2em;
+  display: inline-block;
   margin: 1em 0.1em 0.1em 0;
   border: 0.16em solid rgba(255, 255, 255, 0);
   border-radius: 2em;

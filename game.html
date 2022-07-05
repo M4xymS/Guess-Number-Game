@@ -7,13 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS Links  -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- Scripts -->
-    <script src="js/start.js" defer></script>
+    <!-- Scripts  -->
+
+    <script src="js/script.js" defer></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- title -->
-    <title>Guess the number game!</title>
+    <title>Guess the number!</title>
 </head>
 <body>
-
 <!-- Menu! -->
 <nav class="top-nav">
     <div class="logo">
@@ -26,27 +27,23 @@
     <ul class="menu">
         <li onclick="location.href='index.html'">Change Difficulty</li>
         <li onclick="location.href='https://github.com/M4xymS/Guess-Number-Game'">Github</li>
-
-
     </ul>
   </nav>
 
-<!-- Starting Page! -->
+<!-- Game! -->
     <div class="container">
 <div class="container__box">
-    <div class="container__title">Hey!</div>
-    <div class="container__instruction">
-        In this game you have to guess a number 
-        from 1 to number you choose. <br>
-        You can play by clicking on the number field under. <br>
-        
-        Have fun!
-
+    <div class="container__title">Guess The Number!</div>
+    <div class="container__instruction" id="diff">
+        Simple game with guessing number from 1-15,
+     Have fun!
     </div>
     <div class="container__form">
-        <input type="number" id="number" autocomplete="off" placeholder="Insert Number">
-        <button>Start Game!</button>
-
+        <input type="number" id="number" placeholder="Guess number from 1 to 15">
+        <button>Guess!</button>
+        <div class="countTries">Number of tries: </div>
+        <div class="myNumbers">Your numbers: </div>
+        <div class="result"></div>
     </div>
 </div>
     </div>
