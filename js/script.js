@@ -1,25 +1,27 @@
-const level = localStorage.getItem("level");
+let level = localStorage.getItem("level");
 
 const btn = document.querySelector("button");
 let difficulty = document.querySelectorAll("ul.menu > li");
-const valuesDifficulty = document.querySelectorAll("#diff");
+const valuesDifficulty = document.querySelector("#diff");
 const input = document.querySelector("#number");
+let count = 0;
 input.focus();
 
-valuesDifficulty[0].innerHTML = `Simple game with guessing number from 1-${level},
+//Check if level is set in localstorage
+const levelTestisNull =
+  level === null
+    ? (window.href = "start.html")
+    : (level = localStorage.getItem("level"));
 
-    Have fun!`;
+valuesDifficulty.innerHTML = `Simple game with guessing number from 1-${level}, Have fun!`;
 input.placeholder = `Guess number from 1 to ${level}`;
-
+const randomNumber = Math.floor(Math.random() * level) + 1;
 //Generate random number
 
-let randomNumber = Math.floor(Math.random() * level) + 1;
 // Fields
 const resultField = document.querySelector(".result");
 const countField = document.querySelector(".countTries");
 const numbersField = document.querySelector(".myNumbers");
-
-let count = 0;
 
 const Game = () => {
   const input = document.querySelector("#number").value;
@@ -42,7 +44,7 @@ const Game = () => {
       text: `You got that! the number is: ${input}`,
       showDenyButton: true,
       denyButtonColor: `#d33`,
-      denyButtonText: "Change difficulty",
+      denyButtonText: "Change Difficulty",
       showConfirmButton: true,
       confirmButtonText: `Play Again`,
       confirmButtonColor: `#d33`,
@@ -54,15 +56,17 @@ const Game = () => {
       }
     });
   }
-
-  //Adding every number that someone guess
-  if (input > 0 && input < 15) {
+  //Adding every number that someone guess into the list
+  if ((input) => 1 && input <= level) {
     numbersField.innerHTML += `${input} `;
   }
 };
+
+// Count tries and add every number that someone guess
+countField.innerHTML = `Number of tries: ${count}`;
 const countTries = () => {
   const input = document.querySelector("#number").value;
-  if (input > 0 && input < 15) {
+  if ((input) => 1 && input <= level) {
     count++;
     countField.innerHTML = `Number of tries: ${count}`;
   } else {
