@@ -14,6 +14,12 @@ const StartGame = () => {
       icon: "error",
       confirmButtonText: "Try again",
     });
+  } else if (input.value <= 0) {
+    Swal.fire({
+      title: "Please enter a number higher than 0!",
+      icon: "warning",
+      confirmButtonText: "Try again",
+    });
   } else {
     window.location.href = "game.html";
   }

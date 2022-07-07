@@ -1,5 +1,4 @@
 let level = localStorage.getItem("level");
-
 const btn = document.querySelector("button");
 let difficulty = document.querySelectorAll("ul.menu > li");
 const valuesDifficulty = document.querySelector("#diff");
@@ -29,6 +28,13 @@ const Game = () => {
   // if (input > 15) {
   //   resultField.innerHTML = `Guess number from 1 to 15!`;
   // } else
+  if (input == "e" && input == ",") {
+    Swal.fire({
+      title: "Please enter a integer!",
+      icon: "error",
+      DenyButtonText: "OK",
+    });
+  }
   if (input < randomNumber) {
     resultField.innerHTML = `Your Number is Higher than ${input}!`;
   } else if (input > randomNumber) {

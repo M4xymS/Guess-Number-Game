@@ -124,7 +124,6 @@ h2 {
   .container__box {
     margin: 15px;
   }
-
   .menu-button-container {
     display: flex;
   }
@@ -174,7 +173,8 @@ h2 {
   flex-direction: column;
 }
 .container__box {
-  min-width: 35vw;
+  width: 26rem;
+  max-width: fit-content;
   background: #ffd;
   border: 2px solid #ddd;
   box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
