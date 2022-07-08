@@ -79,9 +79,18 @@ const countTries = () => {
     countField.innerHTML = `Number of tries: ${count}`;
   }
 };
+//submit on enter
+input.addEventListener("keyup", (event) => {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    Game();
+    countTries();
+  }
+});
 
 btn.addEventListener("click", countTries);
 btn.addEventListener("click", Game);
+btn.addEventListener("click", focusOnInput);
 console.log(level);
 console.log(randomNumber);
 //focus
