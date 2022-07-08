@@ -24,5 +24,13 @@ const StartGame = () => {
     window.location.href = "game.html";
   }
 };
+//submit on enter
+input.addEventListener("keyup", (event) => {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    Game();
+    countTries();
+  }
+});
 btn.addEventListener("click", saveNumber);
 btn.addEventListener("click", StartGame);

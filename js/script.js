@@ -71,7 +71,6 @@ const Game = () => {
 // Count tries and add every number that someone guess
 countField.innerHTML = `Number of tries: ${count}`;
 const countTries = () => {
-  const input = document.querySelector("#number").value;
   if ((input) => 1 && input <= level) {
     count++;
     countField.innerHTML = `Number of tries: ${count}`;
@@ -90,7 +89,6 @@ input.addEventListener("keyup", (event) => {
 
 btn.addEventListener("click", countTries);
 btn.addEventListener("click", Game);
-btn.addEventListener("click", focusOnInput);
 console.log(level);
 console.log(randomNumber);
 //focus
